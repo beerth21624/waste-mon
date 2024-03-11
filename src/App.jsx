@@ -95,25 +95,48 @@ const App = () => {
   };
 
   return (
-    <div className="bg-sky-300 w-[100vw] h-[100vh]">
+    <div 
+    style={{
+backgroundImage: "linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      width: "100vw",
+      height: "100vh",
+    
+    }}
+    >
       <div
-        className="absolute w-[600px] h-[740px] bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-      rounded-xl shadow-lg p-4 flex flex-col  space-y-4
+        className="absolute  bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+      rounded-3xl shadow-lg p-4 flex flex-col  space-y-4
+  w-[94vw] h-[96vh]  
+      sm:w-[80vw] sm:h-[80vh]
+      md:w-[70vw] md:h-[80vh]
+      lg:w-[44vw] lg:h-[80vh]
+      xl:w-[40vw] xl:h-[80vh]
       "
       >
-        <h1 className="text-2xl text-center font-bold">Wastemon</h1>
+        <div className="flex relative "
+        style={{
+          marginTop: "-28px"
+        }}
+        >
+          <img src="/image/wastemon.png" alt="logo" className="w-36 h-36 mx-auto" style={{
+           marginBottom: "-20px"
+          }} />
+       
+        </div>
         <FileUpload handleFileChange={handleImageChange} />
         
       <div className="flex flex-col space-y-2">
         {history.map((item, index) => (
           <div
             key={index}
-            className="flex items-center justify-between bg-gray-100 p-4 rounded-lg"
+            className="flex items-center justify-between bg-gray-100 p-2 rounded-2xl"
           >
             <img
               src={`data:image/png;base64,${item.image}`}
               alt="preview"
-              className="w-16 h-16"
+              className="w-12 h-12 rounded-lg"
             />
             <p className="text-sm text-gray-500">{item.result}</p>
             <p className="text-sm text-gray-500">{item.time}</p>
